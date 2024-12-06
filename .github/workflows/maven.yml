@@ -24,7 +24,7 @@ jobs:
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
-          distribution: 'arm64v8/temurin' # See 'Supported distributions' for available options
+          distribution: 'temurin' # See 'Supported distributions' for available options
           java-version: '21'
           cache: 'maven'
     
@@ -48,6 +48,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: Dockerfile
+          file: Dockerfile.gha
           push: true
           tags: rg.fr-par.scw.cloud/polytech-2024/mgagneur/backend:v2.0
